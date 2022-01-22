@@ -22,3 +22,5 @@ Owners (ownerName, plateNumber, model, carBrand, ownerId)
 Booking (plateNumber, model, custName, date, price)
 Payment(paymentMethod, custName, date, price)
 ```
+fix payment table
+read it out as payment history

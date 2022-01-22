@@ -25,13 +25,18 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('booking_history') }}" :active="request()->routeIs('booking_history')">
-                        {{ __('Booking History') }}
+                      {{ __('Booking History') }}
                     </x-jet-nav-link>
                 </div>
-
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('rent_out') }}" :active="request()->routeIs('rent_out')">
                         {{ __('Rent Out') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('about_us') }}" :active="request()->routeIs('about_us')">
+                      {{ __('About Us') }}
                     </x-jet-nav-link>
                 </div>
             </div>
