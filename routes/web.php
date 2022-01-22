@@ -31,3 +31,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/booking_history', functio
 Route::middleware(['auth:sanctum', 'verified'])->get('/rent_out', function () {
     return view('rent_out');
 })->name('rent_out');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/about', function () {
+    return view('about');
+})->name('about');
