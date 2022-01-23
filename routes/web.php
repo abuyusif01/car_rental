@@ -40,7 +40,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/about_us', function () {
     return view('about_us');
 })->name('about_us');
 
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard_import', function () {
     return view('dashboard_import');
 })->name('dashboard_import');
