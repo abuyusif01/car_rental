@@ -9,7 +9,6 @@
     <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
     @endif
     @endauth
-q
     @endif
 </div>
 
@@ -28,9 +27,7 @@ updated_at -->
 
 <x-guest-layout>
     <x-jet-authentication-card>
-        <x-slot name="logo">
-           <h1>Welcome to Car rental service</h1>
-        </x-slot>
+    <img src={{ asset("assets/img/app_logo.png") }} alt="car_rent_icon" width="80" height="80" style="margin: 0 auto">
 
         <x-jet-validation-errors class="mb-4" />
 
