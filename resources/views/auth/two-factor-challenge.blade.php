@@ -1,8 +1,6 @@
 <x-guest-layout>
     <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+    <img src={{ asset("assets/img/app_logo.png") }} alt="car_rent_icon" width="80" height="80" style="margin: 0 auto">
 
         <div x-data="{ recovery: false }">
             <div class="mb-4 text-sm text-gray-600" x-show="! recovery">
