@@ -11,7 +11,7 @@ body {
     flex-direction: column;
 }
 table {
-    background-color: #7eb4cf;
+    background-color: #2B2E4A;
     color: white;
     text-align: center;
     width: 45em;
@@ -30,6 +30,7 @@ td {
     overflow: hidden;
     font-size: 1.5em;
     padding: 1.1em;
+    
 }
 
 .outer {
@@ -40,9 +41,7 @@ td {
     width: 100%;
     padding: 1.5em 0em 0em 0em;
 }
-/* .outer > .inner {
-    width: 100%;
-} */
+
 .choose {
     color: #7eb4cf;
     padding-left: 8em;

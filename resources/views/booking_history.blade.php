@@ -12,10 +12,10 @@
                 <!-- <x-jet-welcome /> -->
                 <!-- // write the content of the page here  -->
                 <table border=1 style="margin: 0 auto">
-                    <tr>
-                        <td>Customer name</td>
-                        <td>Payment Method</td>
-                        <td>Price</td>
+                    <tr >
+                        <td border=1 style="border-radius: 9px 0px 0px 0px; background-color: F77D0A">Customer name</td>
+                        <td border=1 style="border-radius: 0px 0px 0px 0px; background-color: F77D0A">Payment Method</td>
+                        <td border=1 style="border-radius: 0px 9px 0px 0px; background-color: F77D0A">Price</td>
                     </tr>
 
                     @foreach ($users as $user)
