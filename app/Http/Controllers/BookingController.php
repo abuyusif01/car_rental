@@ -29,12 +29,7 @@ class BookingController extends Controller
         $payment->price = $request->price;
         $payment->save();
     }
-    public function s()
-    {
-        return view('booking', ['plateNumber' => 'plateNumber']);
-    }
-
-
+   
     public function show()
     {
         $users = DB::select("select custName,paymentMethod, price from payments");
