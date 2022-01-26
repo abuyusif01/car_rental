@@ -20,7 +20,11 @@
                             @csrf
                             <div>
                                 <x-jet-label for="name" value="{{ __('Name') }}" />
+                                @if (isset($custName))
                                 <x-jet-input id="custName" class="block mt-1 w-full" type="text" name="custName" :value="old('custName')" required autofocus autocomplete="custName" value="{{ $custName ?? '' }}" readonly />
+                                @else
+                                <x-jet-input id="custName" class="block mt-1 w-full" type="text" name="custName" :value="old('custName')" required autofocus autocomplete="custName" value="{{ $custName ?? '' }}" />
+                                @endif
                             </div>
                             <div class="mt-4">
                                 <x-jet-label for="plateNumber" value="{{ __('Plate Number') }}" />
@@ -50,8 +54,15 @@
                             </div>
                             <script>
                                 function clicked() {
+                                    custName = document.getElementById('custName').value;
+                                    plateNumber = document.getElementById('plateNumber').value;
                                     paymentMethod = document.getElementById('paymentMethod').value;
-                                    alert(`Customer Name: {{ $custName }} \nPlate Number: {{ $plateNumber }}\nPrice: {{ $price }}\nPayment Method: ${paymentMethod}\nYou'll be redirected to Dashboard Soon\nThank You for Using our service :)`);
+                                    if (custName != '' || plateNumber != '' || price != '') {
+                                        alert(`Customer Name: ${custName} \nPlate Number: ${plateNumber}\nPrice: ${price}\nPayment Method: ${paymentMethod}\nYou'll be redirected to Dashboard Soon\nThank You for Using our service :)`);
+                                    } else {
+                                        alert("Pls supply the required argument or go back to dashboard and try booking again")
+                                    }
+
                                 }
                             </script>
                             <br>
