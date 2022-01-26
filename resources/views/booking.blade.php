@@ -20,7 +20,7 @@
                             @csrf
                             <div>
                                 <x-jet-label for="name" value="{{ __('Name') }}" />
-                                <x-jet-input id="custName" class="block mt-1 w-full" type="text" name="custName" :value="old('custName')" required autofocus autocomplete="custName" />
+                                <x-jet-input id="custName" class="block mt-1 w-full" type="text" name="custName" :value="old('custName')" required autofocus autocomplete="custName" value="{{ $custName ?? '' }}" readonly />
                             </div>
                             <div class="mt-4">
                                 <x-jet-label for="plateNumber" value="{{ __('Plate Number') }}" />
@@ -33,7 +33,7 @@
                             <div class="mt-4">
                                 <x-jet-label for="price" value="{{ __('Price') }}" />
                                 @if(isset($price))
-                                <x-jet-input id="price" class="block mt-1 w-full" type="text" name="price" required autocomplete="price" value="{{ $price ?? '' }}" readonly/>
+                                <x-jet-input id="price" class="block mt-1 w-full" type="text" name="price" required autocomplete="price" value="{{ $price ?? '' }}" readonly />
                                 @else
                                 <x-jet-input id="price" class="block mt-1 w-full" type="text" name="price" required autocomplete="price" value="{{ $price ?? '' }}" />
                                 @endif
@@ -48,7 +48,15 @@
                                     <option value="BitCoin" id="bitcoin">BitCoin</option>
                                 </select>
                             </div>
-                            <x-jet-button class="mt-4">
+                            <script>
+                                function clicked() {
+                                    paymentMethod = document.getElementById('paymentMethod').value;
+                                    alert(`Customer Name: {{ $custName }} \nPlate Number: {{ $plateNumber }}\nPrice: {{ $price }}\nPayment Method: ${paymentMethod}\nYou'll be redirected to Dashboard Soon\nThank You for Using our service :)`);
+                                }
+                            </script>
+                            <br>
+                            <input type="file" class="block shadow-5xl mb-10 p-2 w-80 italic placehoder-gray-400" name="image">
+                            <x-jet-button class="mt-4" onClick=clicked()>
                                 {{ __('Pay Now') }}
                             </x-jet-button>
 
@@ -59,4 +67,5 @@
             </div>
         </div>
     </div>
+
 </x-app-layout>

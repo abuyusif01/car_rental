@@ -18,6 +18,7 @@ class CreatePaymentsTable extends Migration
             $table->string('custName');
             $table->string('paymentMethod');
             $table->integer('price');
+            $table->string('image');
             $table->timestamps();
         });
     }

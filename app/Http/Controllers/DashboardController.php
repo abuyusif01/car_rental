@@ -7,6 +7,7 @@ class DashboardController extends Controller
 
     public function on_book_click($plateNumber, $price)
     {
-        return view('booking', ['plateNumber' => $plateNumber, 'price' => $price]);
+        $custName = auth()->user()->name;
+        return view('booking', ['plateNumber' => $plateNumber, 'price' => $price, 'custName' => $custName]);
     }
 }

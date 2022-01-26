@@ -20,19 +20,26 @@ class BookingController extends Controller
         $this->storePayment($request);
         return redirect()->route("dashboard");
     }
-    
+
     public function storePayment(Request $request)
     {
         $payment = new Payment();
         $payment->custName = $request->custName;
         $payment->paymentMethod = $request->paymentMethod;
         $payment->price = $request->price;
+        $payment->image = $request->image ?? '';
         $payment->save();
     }
-   
+
     public function show()
     {
-        $users = DB::select("select custName,paymentMethod, price from payments");
+        $current_user = auth()->user()->name;
+        // we show all booking history to admin only.
+        if ($current_user == "admin") {
+            $users = DB::select("select custName, paymentMethod, price from payments");
+            return view('booking_history', ['users' => $users]);
+        }
+        $users = DB::select("select custName,paymentMethod, price from payments where custName = \"$current_user\"");
         return view('booking_history', ['users' => $users]);
     }
 }
